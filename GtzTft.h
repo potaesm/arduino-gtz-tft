@@ -149,7 +149,7 @@ unsigned long thankYou() {
   return micros() - start;
 }
 
-unsigned long student(String studentName, byte presentHour, byte previousHour, byte oldestHour, int studentStatusColor, String studentStatus, String operation, int operationMessageColor, String operationMessage, String subCode) {
+unsigned long printStudent(String studentName, byte presentHour, byte previousHour, byte oldestHour, String studentStatus, String operation, String operationMessage, String subCode) {
   GtzTft.fillScreen(ILI9341_WHITE);
   GtzTft.setTextColor(ILI9341_WHITE);  GtzTft.setTextSize(1);
   unsigned long start = micros();
@@ -181,14 +181,14 @@ unsigned long student(String studentName, byte presentHour, byte previousHour, b
   GtzTft.println();
   GtzTft.print(" ");
   GtzTft.print("Status: ");
-  GtzTft.setTextColor(studentStatusColor);
+  GtzTft.setTextColor((studentStatus == "Normal") ? 0x00BD : 0x7BEF);
   GtzTft.println(studentStatus);
   GtzTft.println();
   GtzTft.setTextColor(0x0000);
   GtzTft.print(" ");
   GtzTft.print(operation);
   GtzTft.print(" ");
-  GtzTft.setTextColor(operationMessageColor);
+  GtzTft.setTextColor((operationMessage == "Add MC") ? 0x6993 : 0x059D);
   GtzTft.print(operationMessage);
   GtzTft.setTextColor(0x0000);
   GtzTft.print(" ");
