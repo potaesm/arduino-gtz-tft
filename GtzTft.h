@@ -19,7 +19,7 @@ void gtzTftDebug() {
   Serial.print("Self Diagnostic: 0x"); Serial.println(x, HEX);
 }
 
-// LCD
+// Custom Screen
 unsigned long printLCD(String message) {
   GtzTft.fillScreen(ILI9341_WHITE);
   GtzTft.setTextColor(ILI9341_WHITE);  GtzTft.setTextSize(1);
