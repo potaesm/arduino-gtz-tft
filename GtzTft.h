@@ -6,23 +6,31 @@
 
 Adafruit_ILI9341 GtzTft = Adafruit_ILI9341(tftChipSelectPin, tftDataCommandPin, tftResetPin);
 
-void gtzTftDebug() {
+void gtzTftDebug()
+{
   uint8_t x = GtzTft.readcommand8(ILI9341_RDMODE);
-  Serial.print("Display Power Mode: 0x"); Serial.println(x, HEX);
+  Serial.print("Display Power Mode: 0x");
+  Serial.println(x, HEX);
   x = GtzTft.readcommand8(ILI9341_RDMADCTL);
-  Serial.print("MADCTL Mode: 0x"); Serial.println(x, HEX);
+  Serial.print("MADCTL Mode: 0x");
+  Serial.println(x, HEX);
   x = GtzTft.readcommand8(ILI9341_RDPIXFMT);
-  Serial.print("Pixel Format: 0x"); Serial.println(x, HEX);
+  Serial.print("Pixel Format: 0x");
+  Serial.println(x, HEX);
   x = GtzTft.readcommand8(ILI9341_RDIMGFMT);
-  Serial.print("Image Format: 0x"); Serial.println(x, HEX);
+  Serial.print("Image Format: 0x");
+  Serial.println(x, HEX);
   x = GtzTft.readcommand8(ILI9341_RDSELFDIAG);
-  Serial.print("Self Diagnostic: 0x"); Serial.println(x, HEX);
+  Serial.print("Self Diagnostic: 0x");
+  Serial.println(x, HEX);
 }
 
 // Custom Screen
-unsigned long printLCD(String message) {
+unsigned long printLCD(String message)
+{
   GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);  GtzTft.setTextSize(1);
+  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
   GtzTft.println();
@@ -40,15 +48,18 @@ unsigned long printLCD(String message) {
   GtzTft.println();
   GtzTft.println();
   GtzTft.println();
-  GtzTft.setTextColor(0x00BD);  GtzTft.setTextSize(4);
+  GtzTft.setTextColor(0x00BD);
+  GtzTft.setTextSize(4);
   GtzTft.print(" ");
   GtzTft.print(message);
   return micros() - start;
 }
 
-unsigned long welcome() {
+unsigned long welcome()
+{
   GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);  GtzTft.setTextSize(1);
+  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
   GtzTft.println();
@@ -56,26 +67,32 @@ unsigned long welcome() {
   GtzTft.println();
   GtzTft.println();
   GtzTft.println();
-  GtzTft.setTextColor(0x7BEF);  GtzTft.setTextSize(3);
+  GtzTft.setTextColor(0x7BEF);
+  GtzTft.setTextSize(3);
   GtzTft.print(" ");
   GtzTft.println("Welcome to");
   GtzTft.println();
-  GtzTft.setTextColor(0x558B);  GtzTft.setTextSize(4);
+  GtzTft.setTextColor(0x558B);
+  GtzTft.setTextSize(4);
   GtzTft.print(" ");
   GtzTft.println("Guitar Zeed");
-  GtzTft.setTextColor(0xAE92);  GtzTft.setTextSize(3);
+  GtzTft.setTextColor(0xAE92);
+  GtzTft.setTextSize(3);
   GtzTft.print(" ");
   GtzTft.println("Musical School");
   GtzTft.println();
-  GtzTft.setTextColor(0x0000);  GtzTft.setTextSize(2);
+  GtzTft.setTextColor(0x0000);
+  GtzTft.setTextSize(2);
   GtzTft.print(" ");
   GtzTft.print("> Please tap your card. <");
   return micros() - start;
 }
 
-unsigned long processComplete() {
+unsigned long processComplete()
+{
   GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);  GtzTft.setTextSize(1);
+  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
   GtzTft.println();
@@ -88,19 +105,23 @@ unsigned long processComplete() {
   GtzTft.println();
   GtzTft.println();
   GtzTft.println();
-  GtzTft.setTextColor(0x7BEF);  GtzTft.setTextSize(3);
+  GtzTft.setTextColor(0x7BEF);
+  GtzTft.setTextSize(3);
   GtzTft.print(" ");
   GtzTft.println("Your process is");
   GtzTft.println();
-  GtzTft.setTextColor(0x558B);  GtzTft.setTextSize(4);
+  GtzTft.setTextColor(0x558B);
+  GtzTft.setTextSize(4);
   GtzTft.print(" ");
   GtzTft.print("Complete");
   return micros() - start;
 }
 
-unsigned long processError() {
+unsigned long processError()
+{
   GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);  GtzTft.setTextSize(1);
+  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
   GtzTft.println();
@@ -113,19 +134,23 @@ unsigned long processError() {
   GtzTft.println();
   GtzTft.println();
   GtzTft.println();
-  GtzTft.setTextColor(0x7BEF);  GtzTft.setTextSize(3);
+  GtzTft.setTextColor(0x7BEF);
+  GtzTft.setTextSize(3);
   GtzTft.print(" ");
   GtzTft.println("Your process is");
   GtzTft.println();
-  GtzTft.setTextColor(0x0000);  GtzTft.setTextSize(4);
+  GtzTft.setTextColor(0x0000);
+  GtzTft.setTextSize(4);
   GtzTft.print(" ");
   GtzTft.print("Error!");
   return micros() - start;
 }
 
-unsigned long thankYou() {
+unsigned long thankYou()
+{
   GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);  GtzTft.setTextSize(1);
+  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
   GtzTft.println();
@@ -143,23 +168,28 @@ unsigned long thankYou() {
   GtzTft.println();
   GtzTft.println();
   GtzTft.println();
-  GtzTft.setTextColor(0x00BD);  GtzTft.setTextSize(4);
+  GtzTft.setTextColor(0x00BD);
+  GtzTft.setTextSize(4);
   GtzTft.print(" ");
   GtzTft.print("Thank you");
   return micros() - start;
 }
 
-unsigned long printStudent(String studentName, byte presentHour, byte previousHour, byte oldestHour, String studentStatus, String operation, String operationMessage, String subCode) {
+unsigned long printStudent(String studentName, byte presentHour, byte previousHour, byte oldestHour, String studentStatus, String operation, String operationMessage, String subCode)
+{
   GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);  GtzTft.setTextSize(1);
+  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
   GtzTft.println();
-  GtzTft.setTextColor(0x0000);  GtzTft.setTextSize(3);
+  GtzTft.setTextColor(0x0000);
+  GtzTft.setTextSize(3);
   GtzTft.print(" ");
   GtzTft.println(studentName);
   GtzTft.println();
-  GtzTft.setTextColor(0x7BEF);  GtzTft.setTextSize(2);
+  GtzTft.setTextColor(0x7BEF);
+  GtzTft.setTextSize(2);
   GtzTft.print(" ");
   GtzTft.print("Current       ");
   GtzTft.print(presentHour);
