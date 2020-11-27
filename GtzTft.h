@@ -26,7 +26,7 @@ void gtzTftDebug()
 }
 
 // Custom Screen
-unsigned long printLCD(String message)
+unsigned long printText(String message)
 {
   GtzTft.fillScreen(ILI9341_WHITE);
   GtzTft.setTextColor(ILI9341_WHITE);
@@ -55,7 +55,7 @@ unsigned long printLCD(String message)
   return micros() - start;
 }
 
-unsigned long welcome()
+unsigned long printWelcome()
 {
   GtzTft.fillScreen(ILI9341_WHITE);
   GtzTft.setTextColor(ILI9341_WHITE);
@@ -88,7 +88,7 @@ unsigned long welcome()
   return micros() - start;
 }
 
-unsigned long processComplete()
+unsigned long printProcessComplete()
 {
   GtzTft.fillScreen(ILI9341_WHITE);
   GtzTft.setTextColor(ILI9341_WHITE);
@@ -117,7 +117,7 @@ unsigned long processComplete()
   return micros() - start;
 }
 
-unsigned long processError()
+unsigned long printProcessError()
 {
   GtzTft.fillScreen(ILI9341_WHITE);
   GtzTft.setTextColor(ILI9341_WHITE);
@@ -146,7 +146,7 @@ unsigned long processError()
   return micros() - start;
 }
 
-unsigned long thankYou()
+unsigned long printThankYou()
 {
   GtzTft.fillScreen(ILI9341_WHITE);
   GtzTft.setTextColor(ILI9341_WHITE);
