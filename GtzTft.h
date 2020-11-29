@@ -211,7 +211,7 @@ unsigned long printStudent(String studentName, float presentHour, float previous
   GtzTft.println();
   GtzTft.print(" ");
   GtzTft.print("Status: ");
-  GtzTft.setTextColor((studentStatus == "Normal") ? 0x00BD : 0x7BEF);
+  GtzTft.setTextColor((studentStatus == "Normal") ? 0x00BD : 0xF801);
   GtzTft.println(studentStatus);
   GtzTft.println();
   GtzTft.setTextColor(0x0000);
