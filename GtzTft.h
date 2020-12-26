@@ -175,7 +175,7 @@ unsigned long printThankYou()
   return micros() - start;
 }
 
-unsigned long printStudent(String studentName, float presentHour, float previousHour, float oldestHour, String studentStatus, String operation, String operationMessage, String subCode)
+unsigned long printStudent(String studentName, float currentHour, float previousHour, float oldestHour, String studentStatus, String operation, String operationMessage, String subCode)
 {
   GtzTft.fillScreen(ILI9341_WHITE);
   GtzTft.setTextColor(ILI9341_WHITE);
@@ -192,7 +192,7 @@ unsigned long printStudent(String studentName, float presentHour, float previous
   GtzTft.setTextSize(2);
   GtzTft.print(" ");
   GtzTft.print("Current       ");
-  GtzTft.print(presentHour);
+  GtzTft.print(currentHour);
   GtzTft.println("  hr.");
   GtzTft.println();
   GtzTft.print(" ");
