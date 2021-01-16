@@ -69,7 +69,7 @@ unsigned long printWelcome()
   GtzTft.println();
   GtzTft.setTextColor(0x7BEF);
   GtzTft.setTextSize(3);
-  GtzTft.print(" ");
+  GtzTft.print("    ");
   GtzTft.println("Welcome to");
   GtzTft.println();
   GtzTft.setTextColor(0x558B);
