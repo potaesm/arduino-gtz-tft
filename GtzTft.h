@@ -1,35 +1,15 @@
 #ifndef GtzTft_h
 #define GtzTft_h
 #include "Arduino.h"
-#include "Adafruit_GFX.h"
-#include "Adafruit_ILI9341.h"
+#include "TFT_eSPI.h"
 
-Adafruit_ILI9341 GtzTft = Adafruit_ILI9341(tftChipSelectPin, tftDataCommandPin, tftResetPin);
-
-void gtzTftDebug()
-{
-  uint8_t x = GtzTft.readcommand8(ILI9341_RDMODE);
-  Serial.print("Display Power Mode: 0x");
-  Serial.println(x, HEX);
-  x = GtzTft.readcommand8(ILI9341_RDMADCTL);
-  Serial.print("MADCTL Mode: 0x");
-  Serial.println(x, HEX);
-  x = GtzTft.readcommand8(ILI9341_RDPIXFMT);
-  Serial.print("Pixel Format: 0x");
-  Serial.println(x, HEX);
-  x = GtzTft.readcommand8(ILI9341_RDIMGFMT);
-  Serial.print("Image Format: 0x");
-  Serial.println(x, HEX);
-  x = GtzTft.readcommand8(ILI9341_RDSELFDIAG);
-  Serial.print("Self Diagnostic: 0x");
-  Serial.println(x, HEX);
-}
+TFT_eSPI GtzTft = TFT_eSPI();
 
 // Custom Screen
 unsigned long printText(String message)
 {
-  GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.fillScreen(TFT_WHITE);
+  GtzTft.setTextColor(TFT_WHITE);
   GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
@@ -57,8 +37,8 @@ unsigned long printText(String message)
 
 unsigned long printWelcome()
 {
-  GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.fillScreen(TFT_WHITE);
+  GtzTft.setTextColor(TFT_WHITE);
   GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
@@ -90,8 +70,8 @@ unsigned long printWelcome()
 
 unsigned long printProcessComplete()
 {
-  GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.fillScreen(TFT_WHITE);
+  GtzTft.setTextColor(TFT_WHITE);
   GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
@@ -119,8 +99,8 @@ unsigned long printProcessComplete()
 
 unsigned long printProcessError()
 {
-  GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.fillScreen(TFT_WHITE);
+  GtzTft.setTextColor(TFT_WHITE);
   GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
@@ -148,8 +128,8 @@ unsigned long printProcessError()
 
 unsigned long printThankYou()
 {
-  GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.fillScreen(TFT_WHITE);
+  GtzTft.setTextColor(TFT_WHITE);
   GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
@@ -177,8 +157,8 @@ unsigned long printThankYou()
 
 unsigned long printStudent(String studentName, float currentHour, float previousHour, float oldestHour, String studentStatus, String operation, String operationMessage, String subCode)
 {
-  GtzTft.fillScreen(ILI9341_WHITE);
-  GtzTft.setTextColor(ILI9341_WHITE);
+  GtzTft.fillScreen(TFT_WHITE);
+  GtzTft.setTextColor(TFT_WHITE);
   GtzTft.setTextSize(1);
   unsigned long start = micros();
   GtzTft.setCursor(0, 0);
