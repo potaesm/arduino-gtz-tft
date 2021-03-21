@@ -6,6 +6,55 @@
 TFT_eSPI GtzTft = TFT_eSPI();
 
 // Custom Screen
+
+unsigned long printLocked()
+{
+  GtzTft.fillScreen(TFT_WHITE);
+  GtzTft.setTextColor(TFT_WHITE);
+  GtzTft.setTextSize(1);
+  unsigned long start = micros();
+  GtzTft.setCursor(0, 0);
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.setTextColor(0xF801);
+  GtzTft.setTextSize(3);
+  GtzTft.print("      ");
+  GtzTft.println("Locked!");
+  return micros() - start;
+}
+
+unsigned long printPleaseTopUp()
+{
+  GtzTft.fillScreen(TFT_WHITE);
+  GtzTft.setTextColor(TFT_WHITE);
+  GtzTft.setTextSize(1);
+  unsigned long start = micros();
+  GtzTft.setCursor(0, 0);
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.println();
+  GtzTft.setTextColor(0xF801);
+  GtzTft.setTextSize(3);
+  GtzTft.print("  ");
+  GtzTft.println("Please top up!");
+  return micros() - start;
+}
+
 unsigned long printText(String message)
 {
   GtzTft.fillScreen(TFT_WHITE);
@@ -58,7 +107,7 @@ unsigned long printWelcome()
   GtzTft.println("Guitar Zeed");
   GtzTft.setTextColor(0xAE92);
   GtzTft.setTextSize(3);
-  GtzTft.print(" ");
+  GtzTft.print("  ");
   GtzTft.println("Musical School");
   GtzTft.println();
   GtzTft.setTextColor(0x0000);
